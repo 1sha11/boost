@@ -1,0 +1,2 @@
+#!/bin/bash
+mysqldump --user=root --host=localhost --password=root USER_BD1 >backup.sql

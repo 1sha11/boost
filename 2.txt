@@ -1,0 +1,6 @@
+#!/bin/bash/
+for i in {1..10};do
+result = $(mysql -u root -p 'root' -n -e "USE USER_BD1; select password from USERS where id=$1;")
+r = $(echo $result |openssl enc - aes-256-cbc -md sha512 -a -pbkdf2 -iter 100000 -salt -pass pass:Swcret@123#)
+mysql -u root -p 'root' -e "USE USER_BD1; UPDATE USERS SET password = '$r' where id=$1;"
+done

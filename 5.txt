@@ -1,0 +1,2 @@
+#!/bin/bash
+mysqld database_name < backup.sql
